@@ -64,8 +64,10 @@ def count_word(filename):
 
 def print_words(filename):
     diction = count_word(filename)
+    i = 0
     for keys in diction:
         print(i, keys, ": ", diction[keys])
+        i+=1
 
     return diction
 
@@ -76,6 +78,7 @@ def print_top(filename):
     sorted_d = sorted(diction.items(), key=lambda x: str(x[1]), reverse=True)
     for i in range(21):
         top[sorted_d[i][0]] = sorted_d[i][1]
+
     i = 1
     for keys in top:
         if type(keys) == str:   # что бы не выводило str: int

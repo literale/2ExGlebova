@@ -66,7 +66,8 @@ def print_mimic(mimic_dict, word):
     mimic_text = word
 
     for i in range(199):
-        buf_words = (mimic_dict.get(word)).split(" ")
+        buf_words = str(mimic_dict.get(word))
+        buf_words = buf_words.split(" ")
         r = random.randint(0, len(buf_words)-1)
         buf_word = buf_words[r]
         mimic_text = mimic_text + " " + buf_word
@@ -82,7 +83,9 @@ def main():
         sys.exit(1)
 
     d = mimic_dict(sys.argv[1])
-    print_mimic(d, '')
+
+    print_mimic(d, ' ')
+    # d = mimic_dict("./alice.txt")
     # наркомания конечно выходит
 
 
