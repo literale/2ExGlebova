@@ -43,7 +43,7 @@ def mimic_dict(filename):
     big_list_file = big_str_file.split()
     diction = {" ": big_list_file[0]}
 
-    for word in big_list_file:   # пытаемся удалить лишние символы (не очень успешно)
+    for word in big_list_file:   # пытаемся удалить лишние символы (не очень успешно) #TODO плохо че
         if word == " " or word == "" or word == "/n":
             big_list_file.remove(word)
 
